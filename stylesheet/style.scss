@@ -1,0 +1,217 @@
+// GOOGLE FONTS 400 = Regular 700 = Bold
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+// VARIABLES
+// Colors
+// primary text colors
+$very_dark_desaturated_blue: hsl(238, 29%, 16%);
+$soft_red: hsl(14, 88%, 65%);
+// background gradient colors
+$soft_violet: hsl(273, 75%, 66%);
+$soft_blue: hsl(240, 73%, 65%);
+// neutral text colors
+$very_dark_grayish_blue: hsl(237, 12%, 33%);
+$dark_grayish_blue: hsl(240, 6%, 50%);
+// color for dividers
+$light_grayish_blue: hsl(240, 5%, 91%);
+// Typography
+// font-family
+$ff: "Kumbh Sans", sans-serif;
+// font-weight
+$fw_regular: 400;
+$fw_bold: 700;
+// font-size
+$fs: 0.75rem;
+// Breakpoints
+$mobile: 640px;
+$tablet: 768px;
+$xl_tablet: 960px;
+$desktop: 1024px;
+
+// RESET
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+// STYLES Mobile First
+body {
+  display: grid;
+  place-items: center;
+  font-family: $ff;
+  font-size: $fs;
+  background-color: $soft_violet; /* For browsers that do not support gradients */
+  background-image: linear-gradient($soft_violet, $soft_blue);
+  .container {
+    width: 19.688rem;
+    @media screen and (min-width: $desktop) {
+      position: relative;
+      width: 57.5rem;
+    }
+  }
+
+  // Illustration of Box
+  .card_illustration_box {
+    @media screen and (min-width: $desktop) {
+      background-image: url(../images/illustration-box-desktop.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 11.9375rem;
+      height: 11.5rem;
+      top: 12rem;
+      left: -5.8rem;
+      z-index: 2;
+    }
+  }
+
+  // FAQ CARD
+  .faq_card {
+    position: relative;
+    background-color: #fff;
+    padding: 8.625rem 1.563rem 3rem;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 19.688rem;
+    @media screen and (min-width: $desktop) {
+      max-width: 57.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 4.375rem;
+      padding-bottom: 5.188rem;
+      overflow: hidden;
+    }
+  }
+
+  .card_illustration_woman {
+    position: absolute;
+    background-image: url(../images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    width: 14.688rem;
+    height: 11.563rem;
+    top: -21%;
+    left: 13%;
+    @media screen and (min-width: $desktop) {
+      background-image: url(../images/illustration-woman-online-desktop.svg);
+      width: 29.5rem;
+      height: 22.438rem;
+      top: 12%;
+      left: -9%;
+      z-index: 1;
+    }
+  }
+
+  .card_illustration_shadow {
+    position: absolute;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    width: 14.688rem;
+    height: 11.563rem;
+    top: 1%;
+    left: 13%;
+    @media screen and (min-width: $desktop) {
+      background-image: url(../images/bg-pattern-desktop.svg);
+      width: 52.625rem;
+      height: 58.563rem;
+      top: -58%;
+      left: -48%;
+      transform: scaleX(-1);
+    }
+  }
+}
+
+// TITLE
+h1 {
+  font-weight: $fw_bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  @media screen and (min-width: $desktop) {
+    grid-column: 2/3;
+    text-align: start;
+  }
+}
+
+// ACCORDION
+.accordion_container {
+  color: $dark_grayish_blue;
+  font-weight: $fw_regular;
+  @media screen and (min-width: $desktop) {
+    max-width: 21.875rem;
+    grid-column: 2/3;
+  }
+}
+
+// Keeps Summary & Details aligned
+details > summary {
+  list-style: none;
+  padding-top: 1.063rem;
+  padding-bottom: 1.063rem;
+  font-size: 0.813rem;
+  cursor: pointer;
+  &:hover {
+    color: $soft_red;
+  }
+}
+
+// Customize the default arrow with Webkit Pseudo-element:
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+// Place arrow image after the summary:
+details > summary::after {
+  content: url(../images/icon-arrow-down.svg);
+  float: right;
+  transition: 0.2s ease-in;
+}
+
+// Rotate arrow image after the summary when details are open:
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+details[open] {
+  margin-bottom: 1.063rem;
+  transition: 0.2s ease-in;
+}
+
+// Change color Question when details are open:
+details[open]summary {
+  color: $very_dark_desaturated_blue;
+}
+
+p {
+  opacity: 0.6;
+}
+
+// Horizontal line
+hr {
+  color: $light_grayish_blue;
+  opacity: 0.2;
+}
+
+footer {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  .attribution {
+    color: $light_grayish_blue;
+    a {
+      color: $very_dark_desaturated_blue;
+    }
+  }
+}
