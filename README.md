@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- View my Solution on [Frontend Mentor](https://www.frontendmentor.io/solutions/faq-accordion-with-vanilla-html-and-css-vGu9OECMtD)
+- View the Live Site [here](https://kxnzx.github.io/faq-accordion-card/)
 
 ## My process
 
